@@ -30,6 +30,8 @@ console.log(challenge.substring(0,2))
 7. Slice out the phrase *Days Of JavaScript* from *30 Days Of JavaScript*.
 ```js
 console.log(challenge.slice(3, challenge.length))
+// OR
+console.log(challenge.slice(3, ))
 ```
 8. Check if the string contains a word __Script__ using __includes()__ method
 ```js
@@ -124,7 +126,7 @@ console.log('"Love is not patronizing and charity isn\'t about pity, it is about
 3. Check if typeof '10' is exactly equal to 10. If not make it exactly equal.
 ```js
 console.log('10' === 10) // false
-console.log(parseFloat('10') === 10)  // true
+console.log(parseInt('10') === 10)  // true
 ```
 4. Check if parseFloat('9.8') is equal to 10 if not make it exactly equal with 10.
 ```js
@@ -164,12 +166,15 @@ console.log('JavaScript'[Math.floor(Math.random() * 'JavaScript'.length)])
     5 1 5 25 125
     ```
 ```js
-console.log('1\t1\t1\t1\t1\n2\t1\t2\t4\t8\n3\t1\t3\t9\t27')
-console.log('1\t1**0\t1**1\t1**2\t1**3\n2\t2**0\t2**1\t2**2\t2**3')
+console.log('1\t1\t1\t1\t1\n2\t1\t2\t4\t8\n3\t1\t3\t9\t27\n4\t1\t4\t16\t64\n5\t1\t5\t25\t125');
+// OR a for loop
+for(let i = 1; i < 6; i++) {
+    console.log(i, i**0, i**1, i**2, i**3)
+}
 ```
 12.  Use __substr__ to slice out the phrase __because because because__ from the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
-```
-
+```js
+console.log('You cannot end a sentence with because because because is a conjunction'.substr(31,23))
 ```
 
 ### Exercises: Level 3
