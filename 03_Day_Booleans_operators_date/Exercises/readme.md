@@ -134,7 +134,16 @@ console.log(parseInt("9.8") == 10); // false
    The area of the triangle is 100
    ```
 
-1. Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
+   ```js
+   let base = prompt("Enter base of triangle: ");
+   let height = prompt("Enter height of triangle: ");
+   console.log(
+     "The area of the triangle is",
+     (parseFloat(base) * parseFloat(height)) / 2
+   );
+   ```
+
+2. Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
 
    ```sh
    Enter side a: 5
@@ -143,13 +152,76 @@ console.log(parseInt("9.8") == 10); // false
    The perimeter of the triangle is 12
    ```
 
-1. Get length and width using prompt and calculate an area of rectangle (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width))
-1. Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
-1. Calculate the slope, x-intercept and y-intercept of y = 2x -2
-1. Slope is m = (y<sub>2</sub>-y<sub>1</sub>)/(x<sub>2</sub>-x<sub>1</sub>). Find the slope between point (2, 2) and point(6,10)
-1. Compare the slope of above two questions.
-1. Calculate the value of y (y = x<sup>2</sup> + 6x + 9). Try to use different x values and figure out at what x value y is 0.
-1. Writ a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
+   ```js
+   let sideA = prompt("Enter side a of triangle: ");
+   let sideB = prompt("Enter side b of triangle: ");
+   let sideC = prompt("Enter side c of triangle: ");
+   console.log(
+     "The perimeter of the triangle is",
+     parseFloat(sideA) + parseFloat(sideB) + parseFloat(sideC)
+   );
+   ```
+
+3. Get length and width using prompt and calculate an area of rectangle (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width))
+
+   ```js
+   let length = Number(prompt("Enter length of rectangle: "));
+   let width = Number(prompt("Enter width of rectangle: "));
+   console.log("The area of the rectangle is", length * width);
+   console.log("The perimeter of the rectangle is", 2 * (length + width));
+   ```
+
+4. Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
+
+   ```js
+   let radius = parseFloat(prompt("Enter radius of circle: "));
+   let pi = 3.14;
+   console.log("The area of the circle:", pi * radius ** 2);
+   console.log("The circumference of the circle:", 2 * pi * radius);
+   ```
+
+5. Calculate the slope, x-intercept and y-intercept of y = 2x -2
+
+   ```js
+   let a = 1,
+     b = 2,
+     c = -2;
+   console.log(
+     "x_intercept:",
+     -c / b,
+     "y_intercept:",
+     c / a,
+     "slope of the y = 2x -2 is :",
+     b
+   );
+   ```
+
+6. Slope is m = (y<sub>2</sub>-y<sub>1</sub>)/(x<sub>2</sub>-x<sub>1</sub>). Find the slope between point (2, 2) and point(6,10)
+
+   ```js
+   let slope = (10 - 2) / (6 - 2);
+   console.log(slope);
+   ```
+
+7. Compare the slope of above two questions.
+
+   ```js
+   console.log(b === slope); /// true
+   ```
+
+8. Calculate the value of y (y = x<sup>2</sup> + 6x + 9). Try to use different x values and figure out at what x value y is 0.
+
+   ```js
+   let a = 1;   // coefficient of x^2
+   let b = 6;   // coefficient of x
+   let c = 9;   // constant
+   let discriminant = b**2 - (4 * a * c);   // 0
+   let root1 = (-b + Math.sqrt(discriminant)) / (2 * a)  // -3
+   let root2 = (-b - Math.sqrt(discriminant)) / (2 * a)  // -3
+   root1 === root2 ? console.log('x: 'root1) : console.log('x:', root1, 'or x :', root2);  // y = 0 for x = -3
+   ```
+
+9. Writ a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
 
    ```sh
    Enter hours: 40
@@ -157,51 +229,118 @@ console.log(parseInt("9.8") == 10); // false
    Your weekly earning is 1120
    ```
 
-1. If the length of your name is greater than 7 say, your name is long else say your name is short.
-1. Compare your first name length and your family name length and you should get this output.
-
    ```js
-   let firstName = "Asabeneh";
-   let lastName = "Yetayeh";
+   let hours = parseFloat(prompt("Enter hours:"));
+   let rate = parseFloat(prompt("Enter rate per hour:"));
+   console.log("Your weekly earning is:", hours * rate);
    ```
 
-   ```sh
-   Your first name, Asabeneh is longer than your family name, Yetayeh
-   ```
+10. If the length of your name is greater than 7 say, your name is long else say your name is short.
 
-1. Declare two variables _myAge_ and _yourAge_ and assign them initial values and myAge and yourAge.
+```js
+let name = prompt("Enter your name:");
+name.length > 7
+  ? console.log("Your name is long")
+  : console.log("Your name is short");
+```
 
-   ```js
-   let myAge = 250;
-   let yourAge = 25;
-   ```
+11. Compare your first name length and your family name length and you should get this output.
 
-   ```sh
-   I am 225 years older than you.
-   ```
+```js
+let firstName = "Asabeneh";
+let lastName = "Yetayeh";
+```
 
-1. Using prompt get the year the user was born and if the user is 18 or above allow the user to drive if not tell the user to wait a certain amount of years.
+```sh
+Your first name, Asabeneh is longer than your family name, Yetayeh
+```
 
-   ```sh
+```js
+let firstName = "Samet";
+let lastName = "Töngelci";
+firstName.length > lastName.length
+  ? console.log(
+      `Your first name ${firstName} is longer than your family name, ${lastName}`
+    )
+  : console.log(
+      `Your first name ${firstName} is shorter than your family name, ${lastName}`
+    );
+```
 
-   Enter birth year: 1995
-   You are 25. You are old enough to drive
+12. Declare two variables _myAge_ and _yourAge_ and assign them initial values and myAge and yourAge.
 
-   Enter birth year: 2005
-   You are 15. You will be allowed to drive after 3 years.
-   ```
+```js
+let myAge = 250;
+let yourAge = 25;
+```
 
-1. Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
+```sh
+I am 225 years older than you.
+```
 
-   ```sh
-   Enter number of years you live: 100
-   You lived 3153600000 seconds.
-   ```
+```js
+let myAge = 250,
+  yourAge = 25;
+myAge > yourAge
+  ? console.log(`I am ${myAge - yourAge} years older than you.`)
+  : console.log(`You are ${yourAge - myAge} years older than me.`);
+```
 
-1. Create a human readable time format using the Date time object
-   1. YYYY-MM-DD HH:mm
-   2. DD-MM-YYYY HH:mm
-   3. DD/MM/YYYY HH:mm
+13. Using prompt get the year the user was born and if the user is 18 or above allow the user to drive if not tell the user to wait a certain amount of years.
+
+```sh
+
+Enter birth year: 1995
+You are 25. You are old enough to drive
+
+Enter birth year: 2005
+You are 15. You will be allowed to drive after 3 years.
+```
+
+```js
+let birthYear = parseInt(prompt("Enter your birth year:"));
+let age = new Date().getFullYear() - birthYear;
+age >= 18
+  ? console.log(`You are ${age}. You are old enough to drive.`)
+  : console.log(
+      `You are ${age}. You will be allowed to drive after ${18 - age} years.`
+    );
+```
+
+14. Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
+
+```sh
+Enter number of years you live: 100
+You lived 3153600000 seconds.
+```
+
+```js
+let age = parseInt(prompt("Enter your age: "));
+let remainingYears = 100 - age;
+let remainingSeconds = remainingYears * 365 * 24 * 60 * 60;
+console.log(
+  `You have lived ${
+    age * 365 * 24 * 60 * 60
+  } seconds. You have ${remainingSeconds} seconds more to live reach 100 years.`
+);
+```
+
+15. Create a human readable time format using the Date time object
+    i. YYYY-MM-DD HH:mm
+    ii. DD-MM-YYYY HH:mm
+    iii. DD/MM/YYYY HH:mm
+
+```js
+let info = new Date(),
+  year = info.getFullYear(),
+  month = info.getMonth(),
+  date = info.getDate(),
+  hours = info.getHours(),
+  minutes = info.getMinutes();
+console.log(`i. ${year}-${month}-${date} ${hours}:${minutes}`);
+console.log(`ii. ${date}-${month}-${year} ${hours}:${minutes}`);
+console.log(`iii. ${date}/${month}/${year} ${hours}:${minutes}`);
+```
 
 ### Exercises: Level 3
 
