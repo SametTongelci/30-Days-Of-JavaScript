@@ -92,12 +92,64 @@
    - 60-69, C
    - 50-59, D
    - 0-49, F
+   ```js
+   let grade = Number(prompt("Enter your grade: "));
+   switch (true) {
+     case grade >= 80 && grade <= 100:
+       console.log("A");
+       break;
+     case grade >= 70 && grade < 80:
+       console.log("B");
+       break;
+     case grade >= 60 && grade < 70:
+       console.log("C");
+       break;
+     case grade >= 50 && grade < 60:
+       console.log("D");
+       break;
+     case grade >= 0 && grade < 50:
+       console.log("F");
+       break;
+     default:
+       console.log("Enter your grade between 0 and 100");
+   }
+   ```
 1. Check if the season is Autumn, Winter, Spring or Summer.
    If the user input is :
    - September, October or November, the season is Autumn.
    - December, January or February, the season is Winter.
    - March, April or May, the season is Spring
    - June, July or August, the season is Summer
+
+```js
+let month = prompt("What month are we in?");
+switch (month) {
+  case "September":
+  case "October":
+  case "November":
+    console.log("The season is Autumn");
+    break;
+  case "December":
+  case "January":
+  case "February":
+    console.log("The season is Winter");
+    break;
+  case "March":
+  case "April":
+  case "May":
+    console.log("The season is Spring");
+    break;
+  case "June":
+  case "July":
+  case "August":
+    console.log("The season is Summer");
+    break;
+  default:
+    console.log("Enter a valid month name!");
+    break;
+}
+```
+
 1. Check if a day is weekend day or a working day. Your script will take day as an input.
 
 ```sh
@@ -112,6 +164,28 @@
 
     What is the day today? FrIDAy
     Friday is a working day.
+```
+
+```js
+let day = prompt("What is the day today?");
+day = day.toLowerCase();
+day = day.charAt(0).toUpperCase() + day.slice(1);
+switch (day) {
+  case "Monday":
+  case "Tuesday":
+  case day === "Wednesday":
+  case "Thursday":
+  case "Friday":
+    console.log(day, "is a working day.");
+    break;
+  case "Saturday":
+  case "Sunday":
+    console.log(day, "is a weekend.");
+    break;
+  default:
+    console.log("Enter a valid day...");
+    break;
+}
 ```
 
 ### Exercises: Level 3
