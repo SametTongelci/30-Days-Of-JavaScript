@@ -114,7 +114,7 @@
        console.log("Enter your grade between 0 and 100");
    }
    ```
-1. Check if the season is Autumn, Winter, Spring or Summer.
+2. Check if the season is Autumn, Winter, Spring or Summer.
    If the user input is :
    - September, October or November, the season is Autumn.
    - December, January or February, the season is Winter.
@@ -150,7 +150,7 @@ switch (month) {
 }
 ```
 
-1. Check if a day is weekend day or a working day. Your script will take day as an input.
+3. Check if a day is weekend day or a working day. Your script will take day as an input.
 
 ```sh
     What is the day  today? Saturday
@@ -206,4 +206,63 @@ switch (day) {
   February has 28 days.
 ```
 
-1. Write a program which tells the number of days in a month, now consider leap year.
+```js
+let month = prompt("Enter a month: ");
+month = month[0].toUpperCase() + month.slice(1).toLowerCase();
+switch (month) {
+  case "January":
+  case "March":
+  case "May":
+  case "July":
+  case "August":
+  case "October":
+  case "December":
+    console.log(`${month} has 31 days.`);
+    break;
+  case "April":
+  case "June":
+  case "September":
+  case "November":
+    console.log(`${month} has 30 days.`);
+    break;
+  case "February":
+    console.log(month, "has 28 days.");
+    break;
+}
+```
+
+2. Write a program which tells the number of days in a month, now consider leap year.
+
+```js
+let month = prompt("Enter a month: ");
+let year = parseInt(prompt("Enter a year: "));
+month = month[0].toUpperCase() + month.slice(1).toLowerCase();
+switch (month) {
+  case "January":
+  case "March":
+  case "May":
+  case "July":
+  case "August":
+  case "October":
+  case "December":
+    console.log(`${month} has 31 days in ${year}.`);
+    break;
+  case "April":
+  case "June":
+  case "September":
+  case "November":
+    console.log(`${month} has 30 days in ${year}.`);
+    break;
+  case "February":
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+      console.log(`${month} has 29 days in ${year}.`);
+      break;
+    } else {
+      console.log(`${month} has 28 days in ${year}.`);
+      break;
+    }
+  default:
+    alert("Please enter a valid month name!");
+    break;
+}
+```
