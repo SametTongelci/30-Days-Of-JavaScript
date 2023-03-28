@@ -227,7 +227,12 @@ console.log(itCompanies.splice(0, itCompanies.length));
 ### Exercise: Level 2
 
 1. Create a separate countries.js file and store the countries array in to this file, create a separate file web_techs.js and store the webTechs array in to this file. Access both file in main.js file
-1. First remove all the punctuations and change the string to array and count the number of words in the array
+
+```
+You can see the solution in main.js, country.js and web_techs.js files
+```
+
+2. First remove all the punctuations and change the string to array and count the number of words in the array
 
    ```js
    let text =
@@ -242,31 +247,110 @@ console.log(itCompanies.splice(0, itCompanies.length));
    13
    ```
 
-1. In the following shopping cart add, remove, edit items
+```js
+let newText = text.replace(/[^a-zA-Z ]/g, "");
+array = newText.split(" ");
+console.log(array.length);
+```
 
-   ```js
-   const shoppingCart = ["Milk", "Coffee", "Tea", "Honey"];
-   ```
+3.  In the following shopping cart add, remove, edit items
 
-   - add 'Meat' in the beginning of your shopping cart if it has not been already added
-   - add Sugar at the end of you shopping cart if it has not been already added
-   - remove 'Honey' if you are allergic to honey
-   - modify Tea to 'Green Tea'
+    ```js
+    const shoppingCart = ["Milk", "Coffee", "Tea", "Honey"];
+    ```
 
-1. In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
-1. In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a CSS preprocess'. If it does not exist add Sass to the array and print the array.
-1. Concatenate the following two variables and store it in a fullStack variable.
+    - add 'Meat' in the beginning of your shopping cart if it has not been already added`
 
-   ```js
-   const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"];
-   const backEnd = ["Node", "Express", "MongoDB"];
+    ```js
+    if (shoppingCart.includes("Meat") === false) {
+      shoppingCart.unshift("Meat");
+    }
+    ```
 
-   console.log(fullStack);
-   ```
+    - add Sugar at the end of you shopping cart if it has not been already added
 
-   ```sh
-   ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
-   ```
+    ```js
+    if (shoppingCart.includes("Sugar") === false) {
+      shoppingCart.push("Sugar");
+    }
+    ```
+
+    - remove 'Honey' if you are allergic to honey
+
+      ```js
+      if (shoppingCart.indexOf("Honey") !== -1) {
+        shoppingCart.splice(shoppingCart.indexOf("Honey"), 1);
+      }
+      ```
+
+    - modify Tea to 'Green Tea'
+
+      ```js
+      if (shoppingCart.indexOf("Tea") !== -1) {
+        shoppingCart[shoppingCart.indexOf("Tea")] = "Green Tea";
+      }
+      ```
+
+4.  In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
+
+    ```js
+    const countries = [
+      "Albania",
+      "Bolivia",
+      "Canada",
+      "Denmark",
+      "Ethiopia",
+      "Finland",
+      "Germany",
+      "Hungary",
+      "Ireland",
+      "Japan",
+      "Kenya",
+    ];
+    if (countries.includes("Ethiopia") !== false) {
+      console.log("ETHIOPIA");
+    } else {
+      countries.push("Ethiopia");
+    }
+    ```
+
+5.  In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a CSS preprocess'. If it does not exist add Sass to the array and print the array.
+
+    ```js
+    const webTechs = [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Redux",
+      "Node",
+      "MongoDB",
+    ];
+    if (webTechs.includes("Sass") !== false) {
+      console.log("Sass is a CSS preprocess");
+    } else {
+      webTechs.push("Sass");
+      console.log(webTechs);
+    }
+    ```
+
+6.  Concatenate the following two variables and store it in a fullStack variable.
+
+    ```js
+    const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"];
+    const backEnd = ["Node", "Express", "MongoDB"];
+
+    console.log(fullStack);
+    ```
+
+    ```sh
+    ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
+    ```
+
+```js
+const fullStack = frontEnd.concat(backEnd);
+console.log(fullStack);
+```
 
 ### Exercise: Level 3
 
